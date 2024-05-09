@@ -1,0 +1,29 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Contract
+    network: optimism
+    source:
+      address: "0xbca09b5c1Fc2bF789Dd74c2fF57443CE90221501"
+      abi: Contract
+      startBlock: 119694950
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CheckedIn
+        - OwnershipTransferred
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: CheckedIn(bool,address,address)
+          handler: handleCheckedIn
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/contract.ts
