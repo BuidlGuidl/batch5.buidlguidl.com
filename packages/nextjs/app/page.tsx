@@ -1,10 +1,48 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import type { NextPage } from "next";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const Home: NextPage = () => {
+  const [checkIns, setCheckIns] = useState<any[]>([]);
+
+  const QueryURL = "https://api.studio.thegraph.com/query/66484/batch-five/version/latest";
+
+  useEffect(() => {
+    const client = new ApolloClient({
+      uri: QueryURL,
+      cache: new InMemoryCache(),
+    });
+
+    const GET_CHECKINS = gql`
+      query {
+        checkedIns(first: 25) {
+          id
+          first
+          builder
+          checkInContract
+        }
+      }
+    `;
+
+    const fetchCheckIns = async () => {
+      try {
+        const { data } = await client.query({
+          query: GET_CHECKINS,
+        });
+        setCheckIns(data.checkedIns);
+      } catch (error) {
+        console.error("Error fetching CheckIns:", error);
+      }
+    };
+
+    fetchCheckIns();
+    return;
+  }, [QueryURL]);
+
   return (
     <>
       <div className="flex items-center flex-col flex-grow pt-10">
@@ -14,10 +52,12 @@ const Home: NextPage = () => {
             <span className="block text-4xl font-bold">Batch 5</span>
           </h1>
           <p className="text-center text-lg">Get started by taking a look at your batch GitHub repository.</p>
-          <p className="text-lg flex gap-2 justify-center">
-            <span className="font-bold">Checked in builders count:</span>
-            <span>To Be Implemented</span>
-          </p>
+          {checkIns !== null && checkIns.length > 0 && (
+            <p className="text-lg flex gap-2 justify-center">
+              <span className="font-bold">Checked in builders count:</span>
+              <span>{checkIns.length}</span>
+            </p>
+          )}
         </div>
 
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">

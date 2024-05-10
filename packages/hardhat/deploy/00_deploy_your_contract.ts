@@ -2,43 +2,46 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import { Contract } from "ethers";
 
-/**
- * Deploys a contract named "deployYourContract" using the deployer account and
- * constructor arguments set to the deployer address
- *
- * @param hre HardhatRuntimeEnvironment object.
- */
-const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  /*
-    On localhost, the deployer account is the one that comes with Hardhat, which is already funded.
+interface DeployedContracts {
+  BatchRegistry: Contract;
+  CheckIn: Contract;
+}
 
-    When deploying to live networks (e.g `yarn deploy --network sepolia`), the deployer account
-    should have sufficient balance to pay for the gas fees for contract creation.
-
-    You can generate a random account with `yarn generate` which will fill DEPLOYER_PRIVATE_KEY
-    with a random private key in the .env file (then used on hardhat.config.ts)
-    You can run the `yarn account` command to check your balance in every network.
-  */
+const deployCheckIn: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("BatchRegistry", {
+  // Deploy the BatchRegistry contract
+  const batchRegistryDeployment = await deploy("BatchRegistry", {
     from: deployer,
-    // Contract constructor arguments
-    args: [deployer],
     log: true,
-    // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
-    // automatically mining the contract deployment transaction. There is no effect on live networks.
-    autoMine: true,
+    // Optional: specify constructor arguments if needed
+    args: [],
   });
+  const BatchRegistry = (await hre.ethers.getContract("BatchRegistry", deployer)) as Contract;
+  console.log("BatchRegistry contract deployed at:", batchRegistryDeployment.address);
 
-  // Get the deployed contract to interact with it after deploying.
-  const batchRegistry = await hre.ethers.getContract<Contract>("BatchRegistry", deployer);
-  console.log("BatchRegistry deployed to:", await batchRegistry.getAddress());
+  // Deploy the CheckIn contract with the address of BatchRegistry contract
+  const checkInDeployment = await deploy("CheckIn", {
+    from: deployer,
+    log: true,
+    // pass the address of BatchRegistry contract as an argument
+    args: [batchRegistryDeployment.address],
+  });
+  const CheckIn = (await hre.ethers.getContract("CheckIn", deployer)) as Contract;
+  console.log("CheckIn contract deployed at:", checkInDeployment.address);
+
+  // store the deployed contracts in an object for further use
+  const deployedContracts: DeployedContracts = {
+    BatchRegistry,
+    CheckIn,
+  };
+
+  //access the addresses using the contracts object
+  console.log("BatchRegistry address:", deployedContracts.BatchRegistry.address);
+  console.log("CheckIn address:", deployedContracts.CheckIn.address);
 };
 
-export default deployYourContract;
+export default deployCheckIn;
 
-// Tags are useful if you have multiple deploy files and only want to run one of them.
-// e.g. yarn deploy --tags YourContract
-deployYourContract.tags = ["BatchRegistry"];
+deployCheckIn.tags = ["CheckIn"];

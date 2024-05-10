@@ -37,6 +37,9 @@
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
+    "@types/cli-progress": "^3.11.5",
+    "@types/concat-stream": "^2.0.3",
+    "@types/parse-json": "^4.0.2",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3"
   },

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["node", "cli-progress", "parse-json"],
     "target": "es2020",
     "module": "commonjs",
     "esModuleInterop": true,
