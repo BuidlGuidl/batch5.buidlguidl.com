@@ -9,6 +9,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
+import { Address } from "~~/components/scaffold-eth";
 
 const CleanerPage: NextPage = () => {
   return (
@@ -34,6 +35,9 @@ const CleanerPage: NextPage = () => {
           <h1 className="text-5xl font-semibold">
             <span className="bg-clip-text text-black dark:text-white bg-gradient-to-r from-base-400 to-base-100 via-base-150 dark:from-secondary dark:via-secondary dark:to-secondary">
               Cleaner
+            </span>
+            <span className="space-y-1">
+              <Address address="0x872f1fFdeEe35a6074658B4FB185E2582Db7896A" />
             </span>
           </h1>
           <div className="flex gap-3">
