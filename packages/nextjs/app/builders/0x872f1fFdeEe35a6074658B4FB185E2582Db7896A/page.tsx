@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { NextPage } from "next";
 import {
   AcademicCapIcon,
@@ -16,7 +17,13 @@ const CleanerPage: NextPage = () => {
       <div className="w-1/2 rounded-l-3xl bg-secondary">
         <div className="flex justify-center items-center h-full">
           <div className="w-80 h-80 overflow-hidden rounded-full shadow-lg">
-            <img src="/thumbnail.jpg" alt="Cleaner Avatar" className="object-cover w-full h-full" />
+            <Image
+              src="/thumbnail.jpg"
+              alt="Cleaner Avatar"
+              className="object-cover w-full h-full"
+              width={500}
+              height={500}
+            />
           </div>
         </div>
       </div>
