@@ -2754,30 +2754,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cli-progress@npm:^3.11.5":
-  version: 3.11.5
-  resolution: "@types/cli-progress@npm:3.11.5"
-  dependencies:
-    "@types/node": "*"
-  checksum: 571fb3b11646415ac49c90e8003b82f3ac58d75fde5952caf40b4a079517b6e25e79ab0a7455d0ab0398d0b2de062646dba075d3d1f8d147eed2ab4d41abbf64
-  languageName: node
-  linkType: hard
-
 "@types/concat-stream@npm:^1.6.0":
   version: 1.6.1
   resolution: "@types/concat-stream@npm:1.6.1"
   dependencies:
     "@types/node": "*"
   checksum: 7d211e74331affd3578b5469244f5cef84a93775f38332adb3ef12413559a23862bc682c6873d0a404b01c9d5d5f7d3ae091fe835b435b633eb420e3055b3e56
-  languageName: node
-  linkType: hard
-
-"@types/concat-stream@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "@types/concat-stream@npm:2.0.3"
-  dependencies:
-    "@types/node": "*"
-  checksum: e829fde246528665b31a9b8f64c369ffc66aa2a1337d2bab1d38f4d4145701480af7c67e877dd09a7fa97fcbaa0f3baa816ed1b3e71c3ad430930acd37f4eb1f
   languageName: node
   linkType: hard
 
@@ -2947,7 +2929,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/parse-json@npm:^4.0.0, @types/parse-json@npm:^4.0.2":
+"@types/parse-json@npm:^4.0.0":
   version: 4.0.2
   resolution: "@types/parse-json@npm:4.0.2"
   checksum: 5bf62eec37c332ad10059252fc0dab7e7da730764869c980b0714777ad3d065e490627be9f40fc52f238ffa3ac4199b19de4127196910576c2fe34dd47c7a470
@@ -12755,9 +12737,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
-    "@types/cli-progress": ^3.11.5
-    "@types/concat-stream": ^2.0.3
-    "@types/parse-json": ^4.0.2
     husky: ^8.0.1
     lint-staged: ^13.0.3
   languageName: unknown

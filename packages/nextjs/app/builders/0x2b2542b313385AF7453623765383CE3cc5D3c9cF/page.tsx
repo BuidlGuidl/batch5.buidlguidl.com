@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { NextPage } from "next";
 
@@ -13,7 +11,7 @@ const PersonalPage: NextPage = () => {
         </h1>
         <div className="card card-side bg-base-100 shadow-xl">
           <figure>
-            <img src="/profileimage.jpeg" alt="Avatar" />
+            <Image src="/assets/profileimage.jpeg" alt="Temitope O Hassan" width={399} height={399} />
           </figure>
           <div className="card-body">
             <h2 className="card-title">Temitope O. Hassan</h2>
@@ -23,12 +21,12 @@ const PersonalPage: NextPage = () => {
               <br />I live in Lagos, the heartbeat of Nigeria.
             </p>
             <div className="card-actions">
-              <Image alt="Twitter" src="/twitter.png" width={25} height={25} />
+              <Image alt="Twitter" src="/assets/twitter.png" width={25} height={25} />
               <a href="https://twitter.com/temitopeohassan" target="_blank">
                 Twitter
               </a>
 
-              <Image alt="Github" src="/github.png" width={25} height={25} />
+              <Image alt="Github" src="/assets/github.png" width={25} height={25} />
               <a href="https://github.com/temitopeohassan" target="_blank">
                 Github
               </a>
