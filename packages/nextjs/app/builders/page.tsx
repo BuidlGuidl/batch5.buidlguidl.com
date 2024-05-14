@@ -17,8 +17,17 @@ const batchRegistryAddress = batchRegistry.address;
 const Builder = ({ address }: { address: AddressType }) => {
   const [ensName, setEns] = useState<string | null>();
   const [ensAvatar, setEnsAvatar] = useState<string | null>();
-  const { data: fetchedEns } = useEnsName({ address, chainId: 1 });
-  const { data: fetchedEnsAvatar } = useEnsAvatar({ name: String(fetchedEns), chainId: 1 });
+
+  const { data: fetchedEns, error: errorName, isFetched: isFetchedEns } = useEnsName({ address, chainId: 1 });
+  if (errorName) console.error("ENS Name Error:", errorName, "for", address);
+
+  const {
+    data: fetchedEnsAvatar,
+    error: errorAvatar,
+    isFetched: isFetchedAvatar,
+  } = useEnsAvatar({ name: String(fetchedEns), chainId: 1 });
+  if (errorAvatar) console.error("ENS Avator Error:", errorAvatar, "for", address);
+
   useEffect(() => setEnsAvatar(fetchedEnsAvatar), [fetchedEnsAvatar]);
   useEffect(() => setEns(fetchedEns), [fetchedEns]);
 
@@ -27,8 +36,12 @@ const Builder = ({ address }: { address: AddressType }) => {
       <div className="m-10 ">
         <div className="bg-base-100 border-base-300 border shadow-md shadow-secondary rounded-3xl px-6 lg:px-8 mb-6 space-y-1 py-4 overflow-x-auto">
           <Link href={`/builders/${address}`}>
-            <BlockieAvatar address={address} ensImage={ensAvatar} size={100} />
-            <div>{ensName}</div>
+            {isFetchedAvatar ? (
+              <BlockieAvatar address={address} ensImage={ensAvatar} size={100} />
+            ) : (
+              <span className="loading loading-spinner loading-lg"></span>
+            )}
+            <div>{isFetchedEns ? ensName : "*****"}</div>
             <div>{address}</div>
           </Link>
         </div>
@@ -42,7 +55,6 @@ const Builders: NextPage = () => {
   const contractLogs = useContractLogs(batchRegistryAddress);
 
   useEffect(() => {
-    console.log("useEffect ~ contractLogs:", contractLogs);
     const logBuilders = contractLogs
       .map(log => decodeEventLog({ abi: batchRegistryAbi, data: log.data, topics: log.topics }))
       .filter(log => log.eventName === "CheckedIn")
