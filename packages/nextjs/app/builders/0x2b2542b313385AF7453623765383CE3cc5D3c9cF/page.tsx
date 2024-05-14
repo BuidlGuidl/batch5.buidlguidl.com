@@ -11,7 +11,7 @@ const PersonalPage: NextPage = () => {
         </h1>
         <div className="card card-side bg-base-100 shadow-xl">
           <figure>
-            <Image src="/assets/profileimage.jpeg" alt="Temitope O Hassan" width={399} height={399} />
+            <Image src="/assets/temitopeohassan.jpeg" alt="Temitope O Hassan" width={399} height={399} />
           </figure>
           <div className="card-body">
             <h2 className="card-title">Temitope O. Hassan</h2>
