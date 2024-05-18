@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Image from "next/image";
 import { NextPage } from "next";
+import type { Metadata } from "next";
 import {
   AcademicCapIcon,
   CodeBracketIcon,
@@ -11,31 +11,17 @@ import {
 } from "@heroicons/react/24/outline";
 import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
 import { Address } from "~~/components/scaffold-eth";
+import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
+
+export const metadata: Metadata = getMetadata({
+  title: "Cleaner - Web3 Enthusiast and Developer",
+  description: "Full-stack and smart contract developer passionate about Web3",
+  imageRelativePath: "https://i.imgur.com/LLWbZK1.jpg",
+});
 
 const CleanerPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Cleaner - Web3 Enthusiast and Developer</title>
-        <meta
-          name="description"
-          content="Official page of Cleaner, a full-stack and smart contract developer passionate about Web3, hackathons, and innovative technology like ZK and AI."
-        />
-        <meta property="og:title" content="Cleaner - Web3 Enthusiast and Developer" />
-        <meta
-          property="og:description"
-          content="Discover the projects and passions of Cleaner, including development in Web3 and participation in global hackathons."
-        />
-        <meta property="og:image" content="/thumbnail.jpg" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cleaner - Web3 Enthusiast and Developer" />
-        <meta
-          name="twitter:description"
-          content="Learn more about Cleaner's work in blockchain technology and his contributions to decentralized applications."
-        />
-        <meta name="twitter:image" content="/thumbnail.jpg" />
-      </Head>
       <div className="w-full max-w-6xl mx-auto rounded-3xl shadow-2xl flex flex-row my-10 animate-gradient-x">
         {/* image column */}
         <div className="w-1/2 rounded-l-3xl bg-secondary">
