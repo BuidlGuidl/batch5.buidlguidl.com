@@ -4,15 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { NextPage } from "next";
 import type { Address as AddressType } from "viem";
-import { decodeEventLog } from "viem";
 import { useEnsAvatar, useEnsName } from "wagmi";
 import { BlockieAvatar } from "~~/components/scaffold-eth";
-import externalContracts from "~~/contracts/externalContracts";
-import { useContractLogs } from "~~/hooks/scaffold-eth";
-
-const batchRegistry = externalContracts[10].BatchRegistry;
-const batchRegistryAbi = batchRegistry.abi;
-const batchRegistryAddress = batchRegistry.address;
+import { useScaffoldEventHistory } from "~~/hooks/scaffold-eth";
 
 const Builder = ({ address }: { address: AddressType }) => {
   const [ensName, setEns] = useState<string | null>();
@@ -51,23 +45,19 @@ const Builder = ({ address }: { address: AddressType }) => {
 };
 
 const Builders: NextPage = () => {
-  const [builders, setBuilders] = useState<string[]>([]);
-  const contractLogs = useContractLogs(batchRegistryAddress);
-
-  useEffect(() => {
-    const logBuilders = contractLogs
-      .map(log => decodeEventLog({ abi: batchRegistryAbi, data: log.data, topics: log.topics }))
-      .filter(log => log.eventName === "CheckedIn")
-      .map(log => (log.args as { builder: string }).builder);
-
-    setBuilders(logBuilders);
-  }, [contractLogs]);
+  const { data } = useScaffoldEventHistory({
+    contractName: "BatchRegistry",
+    eventName: "CheckedIn",
+    fromBlock: 119694950n,
+  });
 
   return (
     <>
-      {builders.map((builder, index) => (
-        <Builder key={index} address={builder} />
-      ))}
+      {data ? (
+        data.map((log, index) => <Builder key={index} address={log.args.builder || ""} />)
+      ) : (
+        <span className="loading loading-spinner loading-lg"></span>
+      )}
     </>
   );
 };
