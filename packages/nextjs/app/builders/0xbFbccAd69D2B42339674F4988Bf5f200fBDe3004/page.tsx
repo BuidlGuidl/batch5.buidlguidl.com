@@ -8,7 +8,13 @@ const Profilepage: NextPage = () => {
         <>
         <div className="w-full h-screen bg-center flex items-center justify-center" >
             <div className="text-center p-96 text-white relative rounded-2xl">
-                <Image src="/assets/etet.png" alt="Profile pic" width={200} height={200} class="rounded-full" />
+                <Image
+                    src="/assets/chris.png"
+                    className="rounded-full"
+                    alt="Chris"
+                    width={200}
+                    height={200}
+                 />
                 <h3>Ezekiel Christian Emmanuelaudu</h3>
                 <p>Pure Designer | Growing Developer</p>>
                 <p style="font-size: 15px; padding: 3px; margin-top: 2px;">
@@ -28,10 +34,11 @@ const Profilepage: NextPage = () => {
                     Say hello
                 </a>
 
-                <div class="text-zinc-800 p-96 -mr-24 -ml-24 -mb-10 rounded-2xl">
-                    <p>My name is Ezekiel Ekondu Christian Emmanuelaudu, &apos;
-                    I'm a Product Designer, 3d modelling artist, Motion &apos; graphics designer and growing Developer.</p>
-                </div>
+              
+                <h2 className="text-zinc-800 p-96 -mr-24 -ml-24 -mb-10 rounded-2xl">
+                My name is Ezekiel Ekondu Christian Emmanuelaudu, &apos;
+                I'm a Product Designer, 3d modelling artist, Motion &apos; graphics designer and growing Developer.
+                </h2>
 
             </div>
 
