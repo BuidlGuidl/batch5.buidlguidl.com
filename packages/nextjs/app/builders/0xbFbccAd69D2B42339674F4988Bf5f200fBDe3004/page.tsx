@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import type { NextPage } from "next";
 
 const Profile: NextPage = () => {
     return(
@@ -35,7 +35,8 @@ const Profile: NextPage = () => {
               
                 <h2 className="text-zinc-800 p-96 -mr-24 -ml-24 -mb-10 rounded-2xl">
                 My name is Ezekiel Ekondu Christian Emmanuelaudu, </h2>
-                <h2 className="text-zinc-800 p-96 -mr-24 -ml-24 -mb-10 rounded-2xl"> I'm a Product Designer, 3d modelling artist, Motion &apos; graphics designer and growing Developer.
+                <h2 className="text-zinc-800 p-96 -mr-24 -ml-24 -mb-10 rounded-2xl"> I'm a Product Designer, 3d modelling artist, Motion
+                 graphics designer and growing Developer.
                 </h2>
 
             </div>
