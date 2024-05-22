@@ -8,7 +8,7 @@ const Profilepage: NextPage = () => {
         <>
         <div className="w-full h-screen bg-center flex items-center justify-center" >
             <div className="text-center p-96 text-white relative rounded-2xl">
-                <Image src="/assets/etet.png" alt="Profile pic" width={25} height={25} class="w-36 p-1.5"></Image>
+                <Image src="/assets/etet.png" alt="Profile pic" width={25} height={25} class="w-36 p-1.5">
                 <h3>Ezekiel Christian Emmanuelaudu</h3>
                 <p>Pure Designer | Growing Developer</p>>
                 <p style="font-size: 15px; padding: 3px; margin-top: 2px;">
@@ -25,7 +25,7 @@ const Profilepage: NextPage = () => {
                 </div>
 
                 <a href="mailto:ekonduemmanuel@gmail.com?subject=A%20mail%20from%20your%20buidlguidl%profile%page">
-                    <btn type="button">Say hello</btn>
+                    Say hello
                 </a>
 
                 <div class="text-zinc-800 p-96 -mr-24 -ml-24 -mb-10 rounded-2xl">
