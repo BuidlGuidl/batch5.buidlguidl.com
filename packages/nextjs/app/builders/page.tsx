@@ -39,7 +39,13 @@ const Builders: NextPage = () => {
           <hr />
         </li>
         {data && data.length > 0 ? (
-          data.map((log, index) => <Builder key={index} address={log.args.builder || ""} />)
+          data
+            // extract builders addresses
+            .map(log => log.args.builder)
+            // filter unique builders
+            .filter((builder, index, builders) => builders.indexOf(builder) === index)
+            // render builder component
+            .map((builder, index) => <Builder key={index} address={builder || ""} />)
         ) : (
           <li>
             <div className="timeline-middle timeline-box">
