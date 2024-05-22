@@ -23,11 +23,11 @@ const Profilepage: NextPage = () => {
                 <div class="social-media">
 
                     <a href="https://www.instagram.com/ex3cofficial">
-                        <Image src="/assets/instagram.png" alt="Instagram" width={25} height={25} class="h-5" /> </a>
+                        <Image src="/assets/instagram.png" alt="Instagram" width={25} height={25} /> </a>
                     <a href="https://x.com/ekondu_e">
-                        <Image src="/assets/x.png" alt="X" width={25} height={25} class="h-5" /></a>
+                        <Image src="/assets/x.png" alt="X" width={25} height={25} /></a>
                     <a href="https://t.me/i_ex3c">
-                        <Image src="/assets/telegram.png" alt="Telegram" width={25} height={25} class="h-5" /></a>
+                        <Image src="/assets/telegram.png" alt="Telegram" width={25} height={25} /></a>
                 </div>
 
                 <a href="mailto:ekonduemmanuel@gmail.com?subject=A%20mail%20from%20your%20buidlguidl%profile%page">
