@@ -8,7 +8,7 @@ const Profilepage: NextPage = () => {
         <>
         <div className="w-full h-screen bg-center flex items-center justify-center" >
             <div className="text-center p-96 text-white relative rounded-2xl">
-                <Image src="assets/etet.png" class="w-36 p-1.5"></Image>
+                <Image src="/assets/etet.png" alt="Profile pic" class="w-36 p-1.5"></Image>
                 <h3>Ezekiel Christian Emmanuelaudu</h3>
                 <p>Pure Designer | Growing Developer</p>>
                 <p style="font-size: 15px; padding: 3px; margin-top: 2px;">
@@ -17,11 +17,11 @@ const Profilepage: NextPage = () => {
                 <div class="social-media">
 
                     <a href="https://www.instagram.com/ex3cofficial">
-                        <Image src="assets/instagram.png" width={25} height={25}> </a>
+                        <Image src="/assets/instagram.png" alt="Instagram" width={25} height={25}> </a>
                     <a href="https://x.com/ekondu_e">
-                        <Image src="assets/x.png" width={25} height={25}></a>
+                        <Image src="/assets/x.png" alt="X" width={25} height={25}></a>
                     <a href="https://t.me/i_ex3c">
-                        <Image src="assets/telegram.png" width={25} height={25}></a>
+                        <Image src="/assets/telegram.png" alt="Telegram" width={25} height={25}></a>
                 </div>
 
                 <a href="mailto:ekonduemmanuel@gmail.com?subject=A%20mail%20from%20your%20buidlguidl%profile%page">
