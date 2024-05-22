@@ -22,7 +22,7 @@ const Profile: NextPage = () => {
                 <h1 className="text-3xl">Ezekiel Christian Emmanuelaudu</h1>
                 <div className="flex gap-2">
                   <AcademicCapIcon className="h-5" />
-                  <h1>Full Stack Developer</h1>
+                  <h1>Pure Designer | Growing Developer</h1>
                 </div>
                 <div className="flex gap-2">
                 <a href="https://www.instagram.com/ex3cofficial">
