@@ -11,38 +11,33 @@ const Profile: NextPage = () => {
           <div className="flex gap-10">
             <div className="">
               <Image
-                src="/assets/sachinverma.jpeg"
+                src="/assets/chris.png"
                 className="rounded-full"
-                alt="Sachin Varma"
+                alt="Ezekiel Christian Emmanuelaudu"
                 width={200}
                 height={200}
               />
             </div>
             <div className="my-auto flex flex-col gap-1">
-              <h1 className="text-3xl">Sachin Verma</h1>
+              <h1 className="text-3xl">Ezekiel Christian Emmanuelaudu</h1>
               <div className="flex gap-2">
                 <AcademicCapIcon className="h-5" />
-                <h1>Full Stack Developer</h1>
+                <h1>Pure Designer | Growing Developer</h1>
+                <h1> Address: 0xbFbccAd69D2B42339674F4988Bf5f200fBDe3004</h1>
               </div>
-              <div className="flex gap-2">
-                <MapPinIcon className="h-5" />
-                <div className="">Thane, Maharastra</div>
-              </div>
-              <a href="https://twitter.com/Sac1in" target="_blank" className="flex gap-2">
+        
+              <a href="https://twitter.com/ekondu_e" target="_blank" className="flex gap-2">
                 <XMarkIcon className="h-5" />
                 <div className="">X.com</div>
               </a>
-              <a href="https://www.linkedin.com/in/sac1hin/" target="_blank" className="flex gap-2 mb-2">
-                <BriefcaseIcon className="h-5" />
-                <div className="">LinkedIn</div>
-              </a>
+        
             </div>
           </div>
           <div className="flex justify-center">
             <h2 className="text-center text-xl mt-4 max-w-screen-lg leading-6">
-              Software engineer with a passion for leveraging technology to create innovative solutions. With two years
-              of hands-on experience in the MERN stack (MongoDB, Express.js, React, Node.js), I&apos;ve honed my skills
-              in building robust and scalable software solutions.
+            My name is Ezekiel Ekondu Christian Emmanuelaudu, &apos;
+                I'm a Product Designer, 3d modelling artist, Motion &apos;
+                graphics designer and growing Developer.
             </h2>
           </div>
         </div>
