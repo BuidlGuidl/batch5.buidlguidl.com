@@ -8,7 +8,7 @@ const Profilepage: NextPage = () => {
         <>
         <div className="w-full h-screen bg-center flex items-center justify-center" >
             <div className="text-center p-96 text-white relative rounded-2xl">
-                <Image src="/assets/etet.png" alt="Profile pic" width={25} height={25} class="w-36 p-1.5" />
+                <Image src="/assets/etet.png" alt="Profile pic" width={36} height={36} class="w-36 p-1.5" />
                 <h3>Ezekiel Christian Emmanuelaudu</h3>
                 <p>Pure Designer | Growing Developer</p>>
                 <p style="font-size: 15px; padding: 3px; margin-top: 2px;">
