@@ -6,8 +6,8 @@ const PersonalPage: NextPage = () => {
     <>
       <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
         <h1 className="text-center">
-          <span className="block text-2xl mb-2">My </span>
-          <span className="block text-4xl font-bold">Profile</span>
+          <span className="block text-2xl mb-2"> </span>
+          <span className="block text-4xl font-bold"></span>
         </h1>
         <div className="card card-side bg-base-100 shadow-xl">
           <figure>
