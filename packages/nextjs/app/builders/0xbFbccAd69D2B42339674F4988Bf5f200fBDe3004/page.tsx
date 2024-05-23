@@ -1,40 +1,52 @@
 import Image from "next/image";
 import type { NextPage } from "next";
 
-const Profile: NextPage = () => {
-    return (
-        <>
-           <div className="text-center p-96 text-white relative rounded-2xl">
-                <Image src="/assets/etet.png" alt="Profile pic" width={36} height={36}  />
-                <h3>Ezekiel Christian Emmanuelaudu</h3>
-                <p>Pure Designer | Growing Developer</p>
-                <p>
-                    Address: 0xbFbccAd69D2B42339674F4988Bf5f200fBDe3004
-                </p>
-                <div className="social-media">
-                    <a href="https://www.instagram.com/ex3cofficial">
-                        <Image src="/assets/instagram.png" alt="Instagram" width={25} height={25} />
-                    </a>
-                    <a href="https://x.com/ekondu_e">
-                        <Image src="/assets/x.png" alt="X" width={25} height={25} />
-                    </a>
-                    <a href="https://t.me/i_ex3c">
-                        <Image src="/assets/telegram.png" alt="Telegram" width={25} height={25} />
-                    </a>
-                </div>
-                
-                <a href="mailto:ekonduemmanuel@gmail.com?subject=A%20mail%20from%20your%20buidlguidl%profile%page">Say hello</a>
+const PersonalPage: NextPage = () => {
+  return (
+    <>
+      <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
+        <h1 className="text-center">
+          <span className="block text-2xl mb-2">My </span>
+          <span className="block text-4xl font-bold">Profile</span>
+        </h1>
+        <div className="card card-side bg-base-100 shadow-xl">
+          <figure>
+            <Image src="/assets/chris.png" alt="Ezekiel Ekondu Christian Emmanuelaudu" width={399} height={399} />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Ezekiel E. Christian Emmanuelaudu</h2>
+            <p>
+                My name is Ezekiel Ekondu Christian Emmanuelaudu. <br />I am currently
+                I'm a Product Designer, 3d modelling artist, Motion graphics designer and growing Developer.
+              <br />I live in Lagos, Nigeria.
+            </p>
+            <div className="card-actions">
+              <Image alt="Twitter" src="/assets/twitter.png" width={25} height={25} />
+              <a href="https://twitter.com/ekondu_e" target="_blank">
+                Twitter
+              </a>
 
-                <div className="bg-base-100 border-base-300 border shadow-md shadow-secondary rounded-3xl px-6 lg:px-8 mb-6 space-y-1  py-4 overflow-x-auto">
-                    <p>My name is Ezekiel Ekondu Christian Emmanuelaudu, &apos;
-                        I'm a Product Designer, 3d modelling artist, Motion &apos; graphics designer and growing Developer.</p>
-                </div>
-                    
-            </div> 
+              <Image alt="Telegram" src="/assets/telegram.png" width={25} height={25} />
+              <a href="https://t.me/i_ex3c" target="_blank">
+                Telegram
+              </a>
 
-        </>
-    )
-}
+              <Image alt="Instagram" src="/assets/instagram.png" width={25} height={25} />
+              <a href="https://www.instagram.com/ex3cofficial" target="_blank">
+                Instagram
+              </a>
+    
 
+              <Image alt="Github" src="/assets/github.png" width={25} height={25} />
+              <a href="https://github.com/i-ex3c" target="_blank">
+                Github
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Profile;
+export default PersonalPage;

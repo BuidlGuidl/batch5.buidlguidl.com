@@ -22,12 +22,12 @@ const PersonalPage: NextPage = () => {
             </p>
             <div className="card-actions">
               <Image alt="Twitter" src="/assets/twitter.png" width={25} height={25} />
-              <a href="https://twitter.com/temitopeohassan" target="_blank">
+              <a href="https://twitter.com/ekondu_e" target="_blank">
                 Twitter
               </a>
 
               <Image alt="Github" src="/assets/github.png" width={25} height={25} />
-              <a href="https://github.com/temitopeohassan" target="_blank">
+              <a href="https://github.com/i-ex3c" target="_blank">
                 Github
               </a>
             </div>
