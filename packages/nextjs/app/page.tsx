@@ -1,29 +1,20 @@
+
+
+
+
+
 "use client";
 
 import Link from "next/link";
 import type { NextPage } from "next";
 import { BugAntIcon } from "@heroicons/react/24/outline";
-import { Address } from "~~/components/scaffold-eth";
-import { useScaffoldEventHistory, useScaffoldReadContract } from "~~/hooks/scaffold-eth";
+import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
   const { data: checkedInCount, isFetched: checkedInCountFetched } = useScaffoldReadContract({
     contractName: "BatchRegistry",
     functionName: "checkedInCounter",
   });
-
-  const {
-    data: eventData,
-    isLoading,
-    error,
-  } = useScaffoldEventHistory({
-    contractName: "BatchRegistry",
-    eventName: "CheckedIn",
-    fromBlock: 114830037n,
-  });
-
-  const firstTimeCheckInEvents = eventData?.filter(({ args: { first } }) => first);
-  const builders = firstTimeCheckInEvents?.map(({ args: { builder } }) => builder);
 
   return (
     <>
