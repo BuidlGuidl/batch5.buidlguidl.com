@@ -56,7 +56,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center  gap-12 flex-col sm:flex-row">
+          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
             <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
               <BugAntIcon className="h-8 w-8 fill-secondary" />
               <p>
@@ -67,26 +67,15 @@ const Home: NextPage = () => {
                 tab.
               </p>
             </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center justify-center max-w-xs rounded-3xl">
-              {error && <h3>Had a problem fetching builder data</h3>}
-              {isLoading
-                ? new Array(5).fill(null).map((_, idx) => (
-                    <div key={idx} className="flex gap-2 items-center mb-2">
-                      <div className="skeleton w-10 h-10 rounded-full shrink-0"></div>
-                      <div className="flex flex-col gap-4">
-                        <div className="skeleton h-4 w-28"></div>
-                      </div>
-                    </div>
-                  ))
-                : builders?.map(builderAddress => (
-                    <Link
-                      key={builderAddress}
-                      href={`/builders/${builderAddress}`}
-                      className="hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded gap-2 grid grid-flow-col"
-                    >
-                      <Address disableAddressLink address={builderAddress} size="xl" />
-                    </Link>
-                  ))}
+            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
+              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
+              <p>
+                Explore your local transactions with the{" "}
+                <Link href="/blockexplorer" passHref className="link">
+                  Block Explorer
+                </Link>{" "}
+                tab.
+              </p>
             </div>
           </div>
         </div>
