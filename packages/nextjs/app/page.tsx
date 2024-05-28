@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import type { NextPage } from "next";
 import { useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 
